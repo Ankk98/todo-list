@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TodoItems from "./Todoitems.js";
 
 class ToDoList extends Component{
     constructor(props){
@@ -23,7 +24,7 @@ class ToDoList extends Component{
         };
         this._inputElement.value = "";
         console.log(this.state.items);
-
+        e.preventDefault();
         
     }
     render(){
@@ -36,6 +37,7 @@ class ToDoList extends Component{
                     <button type="submit">Add to the List</button>
                 </form>
             </div>
+            <TodoItems entries={this.state.items}/>
         </div>
         );
     }
