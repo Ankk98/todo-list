@@ -8,6 +8,7 @@ class ToDoList extends Component{
             items: []
         };
         this.addItem = this.addItem.bind(this);
+        this.deleteItem = this.deleteItem.bind(this);
     }
     addItem(e){
         if(this._inputElement.value !== ""){
@@ -28,8 +29,8 @@ class ToDoList extends Component{
         
     }
     deleteItem(key){
-        var filteredItems = this.state.items.filter(function(){
-            return (items.key !== key)
+        var filteredItems = this.state.items.filter(function(item){
+            return (item.key !== key)
         });
         this.setState({
             items: filteredItems
